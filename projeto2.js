@@ -1,10 +1,18 @@
 const precoEtanol = 3.89;
 const precoGasolina = 5.56;
-const kmPorLitros = 10;
-const distanciaEmKm = 100;
-const entrada = require('prompt-sync') ({sigint: true});
+const entradakmPorLitros = require('prompt-sync') ({sigint: true});
+let kmPorLitros;
+kmPorLitros = entradakmPorLitros ("Digite quantos KMs seu automovel faz por litro: ");
+console.log(`Seu Automovel percorre ${kmPorLitros} por Litro.`);
+
+const entradaDistanciaEmKm = require('prompt-sync') ({sigint: true});
+let distanciaEmKm;
+distanciaEmKm = entradaDistanciaEmKm ("Digite qual a distancia da sua viagem, em KMs : ");
+console.log(`A Distancia é: ${distanciaEmKm}`);
+
+const entradaTipoCombustivel = require('prompt-sync') ({sigint: true});
 let tipoCombustivel;
-tipoCombustivel = entrada ("Digite qual o tipo de combustivel deseja abastecer?, Entre etanol e gasolina: ");
+tipoCombustivel = entradaTipoCombustivel ("Digite qual o tipo de combustivel deseja abastecer?, Entre etanol e gasolina: ");
 console.log(`O tipo escolhido foi: ${tipoCombustivel}`);
 
 const litrosConsumidos = distanciaEmKm / kmPorLitros;
@@ -18,5 +26,6 @@ if (tipoCombustivel === 'etanol') {
 } else {
     console.log('Resposta invalida. Por favor, responda com etanol ou gasolina');
 }
+
 
 
